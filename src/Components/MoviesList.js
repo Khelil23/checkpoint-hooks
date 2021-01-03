@@ -1,15 +1,21 @@
-import React from 'react'
-import MoviesCard from './MoviesCard'
+import React from 'react';
 
-const MoviesList = (props) => {
-    console.log("props : ", props)
-    return(
-        <div>
-            {props.moviesList.map((el,i)=>(
-                <MoviesCard key ={i} el ={el}/>
-                ))}         
-            
-        </div>
-    )
-}
+import MoviesCard from './MoviesCard';
+
+const MoviesList = ({ moviesList, nameSearch, ratingSearch }) => {
+  return (
+    <div>
+      {moviesList
+        .filter(
+          (el) =>
+            el.name.toLowerCase().includes(nameSearch.toLowerCase().trim()) &&
+            el.rating >= ratingSearch
+        )
+        .map((el, i) => (
+          <MoviesCard key={i} movie={el} />
+        ))}
+    </div>
+  );
+};
+
 export default MoviesList;

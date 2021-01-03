@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 
 
-/*import Rate from '../Rate';*/
+import Rate from './Rate';
 
  
 
 
 Modal.setAppElement('#root');
 
-const AddMovie = ({ addNewMovie }) => {
+const MoviesAdd = ({ addNewMovie }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [name, setName] = useState('');
   const [date, setDate] = useState('');
@@ -68,7 +68,7 @@ const AddMovie = ({ addNewMovie }) => {
             />
             <label>Movie Rate</label>
             <div className="rating-search">
-            
+            <Rate rating={rating} setRatingSearch={setRating} />
             </div>
             {  <input
               type="number"
@@ -116,4 +116,4 @@ const AddMovie = ({ addNewMovie }) => {
   );
 };
 
-export default AddMovie;
+export default MoviesAdd;

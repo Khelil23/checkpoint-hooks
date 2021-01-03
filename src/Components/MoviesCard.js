@@ -1,24 +1,22 @@
 import React from 'react';
 
-const MoviesCard = ({el}) => {
-    /*console.log("el image : ", el.image)
-    const iAmLegende = require("../" + el.image)
-    console.log(iAmLegende)*/
-  
+ 
+    
+    const MoviesCard = ({
+      movie: { name, date, image, type},
+    }) => {
     return (
-        <div  style={
-            {display: 'flex', marginTop: '10px', justifyContent: 'space-around',}
-        }>
+        <div>
       <div >
-        <img src={el.image} alt="poster" />
+        <img src={image} alt="poster" />
       </div>
       <div>
-        <h1>{el.name}</h1>
+        <h1>{name}</h1>
         <div>
           <ul>
-            <li>{el.date}</li>
+            <li>{date}</li>
             <li>||</li>
-            <li>{el.type}</li>
+            <li>{type}</li>
           </ul>
         </div>
        
